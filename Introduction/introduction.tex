@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+% THESIS INTRODUCTION
+
+\chapter{Introduction}
+\label{chap:introduction}
+\ifpdf
+    \graphicspath{{Introduction/Figures/PNG/}{Introduction/Figures/PDF/}{Introduction/Figures/}}
+\else
+    \graphicspath{{Introduction/Figures/EPS/}{Introduction/Figures/}}
+\fi
+
+% quote
+
+%\setlength{\epigraphwidth}{.35\textwidth}
+%\epigraph{Research is formalized curiosity.}{ Zora Neale Hurston, 1942}
+
+% examples of sections
+
+\section{Motivations}
+\label{motivations}
+In a dynamic network the topology changes over time. Naturally this makes them difficult to quickly interpret and visualise \cite{iddps}. Consider even a simple network composed of a handful of nodes and edges, if we add the dynamic element and the network mutates over time,  it can be difficult to interpret what, if anything, those mutations indicate or represent. To remedy this, a variety of easily interpretable measures can be used to produce some result based on an aspect of the graph at each frame of time or overall, for example the number of edges. Instead of manually stepping through the graph and attempting to pattern match, the measures can be observed instead. Similar to feature projection, this serves to effectively reduce the dimensionality \cite{wikidimred} of the problem down to the number of measures used as they provide an abstract overview of the changes the graph goes through. However as more and more measures are used we find ourselves with a similar complexity problem, and to remedy this an intelligent visualisation of the measure results must be implemented.
+
+<The Vistorian>
+<Dynamic Networks>
+<Measures>
+<Why visualisation is necessary>
+
+\section{Objectives and Contributions}
+\label{objectives}
+\begin{itemize}
+    \item Summary of the literature regarding dynamic network measures and visualisation.
+    \item Development and evaluation of a novel measure - Node Volatility.
+    \item Extension of The Vistorian through:
+    \begin{itemize}
+        \item Implementation of methods to calculate measures.
+        \item Visualisations of these measures.
+        \item Implementing an extensible framework that ensures new global measures can be easily visualised.
+    \end{itemize}
+    \item Demonstration of visualisation and measures in a usage scenario.
+
+
+\end{itemize}
+
+
+
+
+

@@ -1,0 +1,44 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+% THESIS CHAPTER
+
+\section*{Points of Interest}
+
+% short summary of the chapter
+\section*{Summary}
+To further enhance network understanding, "Points of Interest" on the graph are shown. These are points where there are sudden changes or notable outliers across several measures during the same time frame.
+
+\section{Background}
+One approach that was considered was to use Shift Detection or Step Detection\cite{sd}. However these methods tended to be designed for noisy data. Since the measures tend to produce little noise <cite?> a simpler method can be used.
+
+We use Tukey Fences to spot outliers. David C. Hoaglin in John W. Tukey and Data Analysis \cite{jwtada} states that Exploratory Data Analysis\cite{eda} uses "fences" to flag possible outliers. These are based on the "hinges," HL and HU, which are approximate quartiles of the batch. He goes on to say that the basic idea is to calculate the H-spread, $d_H = H_U - H_L$, and lay off a multiple of it below $H_L$ and above $H_U$: 
+
+\begin{equation}
+ H_L-kd_H \, \, and \, \, H_U + kd_H.
+\end{equation}
+
+
+He continues to say that the limited preliminary edition (Tukey, 1970c) used k = 1.0 for the "side values" and k = 1.5 for the "three-halves values." By the first edition (Tukey, 1977a) the constants had changed a lot, to k = 1.5 for the "inner fences" and k = 3.0 for the "outer fences," with the labels "outside" and "far out," respectively, for data values beyond them.
+
+Finally he states that the aim was not to have a formal rule for declaring an observation an outlier, but to call attention to such data for further investigation. The values of k have remained at 1.5 and 3.0, and the "inner fences" naturally see more use in practice. 
+
+
+<diagram>
+
+
+Since the goal is not to formally rule on outliers, this fits nicely with what is required in the Vistorian (ew).
+
+
+
+THOUGHTS FROM MEETING
+
+Met with 5 experts. Positive reaction towards the measure visualisations and positive reaction to volatiltiy, towards it's applications and how it as a concept could be applied or modified.
+Gill mentioned it could be called promiscuity.
+5 of my measures overlapped with theirs - size/number of nodes, number of edges, diameter, density, degree centrality. I don't have Size of Largest Component or the clustering coefficient or Average Path Length. "Sleeping Beauty Papers" in citation networks was mentioned as a possible aspect or direction for volatility. Social Capital was also mentioned - more diverse connections give a richer...? Some way of comparing new links with old links, effectively what I'm doing but perhaps a new way of thinking about it. Tom Schneider, theory on membership. Selecting a subgraph and doing the analysis on that could be very interesting and useful. Could highlight more ephemeral contributions? 
+General positive and curious reaction, spurred new ideas and focused the direction to take I think. Very validating to know that this is useful as is. 
+
+- When to stop coding
+- What to prioritise (volatility speedup, points of interest, bugfixing, UI, ...)
+-Which things they mentioned should be implemented?
+-...
