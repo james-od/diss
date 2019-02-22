@@ -20,23 +20,26 @@
 
 \section{Motivations}
 \label{motivations}
-In a dynamic network the topology changes over time. Naturally this makes them difficult to quickly interpret and visualise \cite{iddps}. Consider even a simple network composed of a handful of nodes and edges, if we add the dynamic element and the network mutates over time,  it can be difficult to interpret what, if anything, those mutations indicate or represent. To remedy this, a variety of easily interpretable measures can be used to produce some result based on an aspect of the graph at each frame of time or overall, for example the number of edges. Instead of manually stepping through the graph and attempting to pattern match, the measures can be observed instead. Similar to feature projection, this serves to effectively reduce the dimensionality \cite{wikidimred} of the problem down to the number of measures used as they provide an abstract overview of the changes the graph goes through. However as more and more measures are used we find ourselves with a similar complexity problem, and to remedy this an intelligent visualisation of the measure results must be implemented.
+In a dynamic network the topology changes over time. This could be changes in the existence of edges or of %presence of%
+nodes \cite{itdn}. A road network which undergoes periodic maintenance to sections - removing edges for a period, a brain network where neuron activity varies or a social proximity network where edges are created while people are close to each other and lost when they move apart would all be considered dynamic.
+Naturally, dynamic networks are difficult to quickly interpret and visualise \cite{iddps}. Consider even a simple network composed of a handful of nodes and a handful of edges. Suppose we add the dynamic element to this simple network and mutate, say, the active edges through a given time period. It can be difficult to interpret what if anything those mutations indicate or represent.  To remedy this, a variety of easily interpretable measures can be used to produce some result based on either an aspect of the graph at each frame of time or on the graph overall, for example the number of edges. Instead of manually stepping through the graph and attempting to pattern match, the measures can be observed instead. Similar to feature projection, this serves to effectively reduce the dimensionality \cite{wikidimred} of the problem down to the number of measures used as they provide an abstract overview of the changes the graph goes through. However as more and more measures are used we find ourselves with a similar complexity problem, and to remedy this an intelligent visualisation of the measure results must be implemented. Visualising these measures can allow us to spot patterns and trends over time, locate points of interest and motivate a hypothesis. Traditionally, network visualisations have been focused on visualising the changes themselves \cite{tsotaivg}, however here I aim for an approach which is more complementary to the network.
 
-<The Vistorian>
-<Dynamic Networks>
-<Measures>
-<Why visualisation is necessary>
-<test change>
+Although any type network could have been used - and care was taken while designing the measures and visualisations to keep them agnostic of the domain and avoid overfitting - a social network was investigated. Social networks require less expert domain knowledge compared with say, biological networks to understand at a basic level [source or remove]. For the sake of simplicity I chose an easy to understand and rather small network.  Since this project aims to investigate dynamic network interpretation, using a simple network as a baseline ensures that difficulties in comprehension aren’t just inherent to the domain but to the network itself. There are also a variety of existing networks that could be used to test against [source/example].
+%Social network analysis provides a novel window by allowing the impacts to be quantified at the individual level, and the links between past, current and future behaviour to be carried across contexts. <https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2656.12764>
+I extend the functionality of The Vistorian \cite{bach:hal-01205822} - an ongoing open source project by Benjamin Bach, Nathalie Henry Riche, Roland Fernandez, Emmanoulis Giannisakis, Bongshin Lee, et al to create an online platform which provides interactive visualization for various kinds of networks, designed for social scientists and historians. 
+
+
 
 \section{Objectives and Contributions}
 \label{objectives}
 \begin{itemize}
     \item Summary of the literature regarding dynamic network measures and visualisation.
-    \item Development and evaluation of a novel measure - Node Volatility.
+    \item Development and evaluation of a novel local dynamic measure - Node Volatility.
+    \item Development and evaluation of a novel global dynamic measure - Global Volatility.
     \item Extension of The Vistorian through:
     \begin{itemize}
         \item Implementation of methods to calculate measures.
-        \item Visualisations of these measures.
+        \item Creating a visualisation of these measures, embedded into the existing interface.
         \item Implementing an extensible framework that ensures new global measures can be easily visualised.
     \end{itemize}
     \item Demonstration of visualisation and measures in a usage scenario.
